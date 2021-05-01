@@ -12,17 +12,17 @@ RUN \
         apt-get install -y libdb4.8-dev libdb4.8++-dev && \
         apt-get install -y libminiupnpc-dev && \
         apt-get install -y libzmq3-dev 
-RUN mkdir /tesseract-core
-COPY tesseract-core /tesseract-core
-WORKDIR /tesseract-core
+RUN mkdir /bitcoin
+COPY bitcoin /bitcoin
+WORKDIR /bitcoin
 RUN ./autogen.sh
 RUN ./configure --disable-tests --disable-bench --with-gui=no
 RUN make
 RUN make install
-RUN strip /usr/local/bin/tesseract*
-RUN rm -rf /tesseract-core
+RUN strip /usr/local/bin/bitcoin*
+RUN rm -rf /bitcoin
 RUN mkdir /data
-COPY tesseract.conf /data
-COPY tc /usr/local/bin
+COPY bitcoin.conf /data
+COPY bc /usr/local/bin
 WORKDIR /root
-CMD ["tesseractd", "-datadir=/data", "-printtoconsole"]
+CMD ["bitcoind", "-datadir=/data", "-printtoconsole"]

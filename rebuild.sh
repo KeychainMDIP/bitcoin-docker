@@ -1,5 +1,5 @@
 #!/bin/sh
-TAG=`git rev-parse --short HEAD`
-docker image build -t macterra/tesseract-node:$TAG .
-docker image tag macterra/tesseract-node:$TAG macterra/tesseract-node:latest
+TAG=v0.18.0
+docker image build -t macterra/bitcoin-node:$TAG .
+docker image tag macterra/bitcoin-node:$TAG macterra/bitcoin-node:latest
 
