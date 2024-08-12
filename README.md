@@ -1,10 +1,11 @@
 # bitcoin-docker
 
-Builds a bitcoin full node in a docker container
+Builds a bitcoin `testnet4` full node in a docker container
 
 Build and run it with:
 
 ```
+docker compose build
 docker compose up -d
 ```
 
