@@ -2,8 +2,19 @@
 
 Builds a bitcoin full node in a docker container
 
-Run it with:
+Build and run it with:
 
 ```
-docker run --rm -d --name bitcoind -p 8333:8333 -v $HOME/.bitcoin:/data macterra/bitcoin-node:latest
+docker compose up -d
+```
+
+Create a wallet with:
+```
+./bc createwallet mdip
+./bc getwalletinfo
+```
+
+Create an address to receive funds:
+```
+./bc getnewaddress
 ```
