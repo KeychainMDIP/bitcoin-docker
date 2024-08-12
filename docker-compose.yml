@@ -3,10 +3,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: bitcoin-core:testnet4
+    image: keychainmdip/bitcoin-core
     container_name: testnet4
     volumes:
-      - ./data:/data
+      - ./data:/root/.bitcoin
     ports:
       - "48333:48333"
       - "48332:48332"

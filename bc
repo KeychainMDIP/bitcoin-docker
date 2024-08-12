@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-bitcoin-cli -datadir=/data "$@"
+docker exec testnet4 bitcoin-cli "$@"

@@ -15,7 +15,6 @@ RUN make
 RUN make install
 RUN strip /usr/local/bin/bitcoin*
 RUN rm -rf /bitcoin
-RUN mkdir /data
-COPY bc /usr/local/bin
 WORKDIR /root
-CMD ["bitcoind", "-datadir=/data", "-printtoconsole"]
+RUN mkdir /root/.bitcoin
+CMD ["bitcoind", "-printtoconsole"]
