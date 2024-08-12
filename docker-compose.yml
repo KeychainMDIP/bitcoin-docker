@@ -1,0 +1,12 @@
+services:
+  testnet4:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: bitcoin-core:testnet4
+    container_name: testnet4
+    volumes:
+      - ./data:/data
+    ports:
+      - "48333:48333"
+      - "48332:48332"
